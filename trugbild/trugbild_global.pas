@@ -1,87 +1,105 @@
-// =============================================================================
-//
-//  TrugBild
-//
-// =============================================================================
-//
-//  Copyright (C) 2013 by Sascha Willems (www.saschawillems.de)
-//
-//  This code is free software, you can redistribute it and/or
-//  modify it under the terms of the GNU Lesser General Public
-//  License version 3 as published by the Free Software Foundation.
-//
-//  Please review the following information to ensure the GNU Lesser
-//  General Public License version 3 requirements will be met:
-//  http://opensource.org/licenses/lgpl-3.0.html
-//
-//  The code is distributed WITHOUT ANY WARRANTY; without even the
-//  implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
-//  PURPOSE.  See the GNU LGPL 3.0 for more details.//
-//
-// =============================================================================
+ // =============================================================================
+ //
+ //  TrugBild
+ //
+ // =============================================================================
+ //
+ //  Copyright (C) 2013 by Sascha Willems (www.saschawillems.de)
+ //
+ //  This code is free software, you can redistribute it and/or
+ //  modify it under the terms of the GNU Lesser General Public
+ //  License version 3 as published by the Free Software Foundation.
+ //
+ //  Please review the following information to ensure the GNU Lesser
+ //  General Public License version 3 requirements will be met:
+ //  http://opensource.org/licenses/lgpl-3.0.html
+ //
+ //  The code is distributed WITHOUT ANY WARRANTY; without even the
+ //  implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+ //  PURPOSE.  See the GNU LGPL 3.0 for more details.//
+ //
+ // =============================================================================
 
 unit TrugBild_Global;
 
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs, Math,glMisc, Types, ComObj,
-  dglOpenGL, Vcl.ExtCtrls, glFrameBufferObject, glSlangShaderManager, glMath, glTextureManager, glFont,
-  XMLDoc, XMLIntf;
+  Windows,
+  Messages,
+  SysUtils,
+  Classes,
+  Graphics,
+  Controls,
+  Forms,
+  Dialogs,
+  Math,
+  glMisc,
+  Types,
+  ComObj,
+  dglOpenGL,
+  Vcl.ExtCtrls,
+  glFrameBufferObject,
+  glSlangShaderManager,
+  glMath,
+  glTextureManager,
+  glFont,
+  XMLDoc,
+  XMLIntf;
 
 var
-  ShaderManager : TGLSLShaderManager;
-  MousePos 			: TPoint;
-  OrthoSize			: TPoint;
+  ShaderManager: TGLSLShaderManager;
+  MousePos: TPoint;
+  OrthoSize: TPoint;
 
-  DegTimer		  : Single;
-  Timer					: Single;
-  TimeFactor    : Single;
+  DegTimer: single;
+  Timer: single;
+  TimeFactor: single;
 
-  Font					: TTexFont;
-  FontBlack     : TTexFont;
+  Font: TTexFont;
+  FontBlack: TTexFont;
 
-  AspectRatio		: Single;
+  AspectRatio: single;
 
-	Quit 					: Boolean;
+  Quit: Boolean;
 
 const
- CursorDim      = 80;
- ColSelStep			= 25;
- FadeSpeed      = 0.075;
+  CursorDim  = 80;
+  ColSelStep = 25;
+  FadeSpeed  = 0.075;
 
-function Clamp(AValue : Single; AMin, AMax : Single) : Single;
-function Wrap(AVAlue : Single; AWrapAround : Single) : Single;
-procedure RenderLoadingScreen(ADC : HDC);
+function Clamp(AValue: single; AMin, AMax: single): single;
+function Wrap(AVAlue: single; AWrapAround: single): single;
+procedure RenderLoadingScreen(ADC: HDC);
 
 implementation
 
 
-function Clamp(AValue : Single; AMin, AMax : Single) : Single;
+function Clamp(AValue: single; AMin, AMax: single): single;
 begin
-	Result := AValue;
+  Result := AValue;
   if AValue < AMin then
-  	exit(AMin);
+    Exit(AMin);
   if AValue > AMax then
-  	exit(AMax);
+    Exit(AMax);
 end;
 
 
-function Wrap(AVAlue : Single; AWrapAround : Single) : Single;
+function Wrap(AVAlue: single; AWrapAround: single): single;
 begin
-	Result := AValue;
-	if AValue > AWrapAround then
-  	Result := AValue - AWrapAround;
+  Result := AValue;
+  if AValue > AWrapAround then
+    Result := AValue - AWrapAround;
 end;
 
 
-procedure RenderLoadingScreen(ADC : HDC);
+procedure RenderLoadingScreen(ADC: HDC);
 begin
-	glClearColor(0.05, 0.05, 0.05, 1);
+  glClearColor(0.05, 0.05, 0.05, 1);
 
   glMatrixMode(GL_PROJECTION);
   glLoadIdentity;
-	glViewPort(0, 0, Application.MainForm.ClientWidth, Application.MainForm.ClientHeight);
+  glViewPort(0, 0, Application.MainForm.ClientWidth, Application.MainForm.ClientHeight);
   glOrtho(0, OrthoSize.x, OrthoSize.y, 0, -128, 128);
   glClear(GL_COLOR_BUFFER_BIT or GL_DEPTH_BUFFER_BIT or GL_STENCIL_BUFFER_BIT);
 
@@ -101,3 +119,4 @@ begin
 end;
 
 end.
+
