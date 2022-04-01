@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="E:\lazarus\fpc\2.6.4\bin\i386-win32\fpc.exe" Date="1189848909"/>
+  <Params Value=" -Mdelphi -Scghi -O1 -g -gl -WG -l -vewnhibq -FuE:\lazarus\lcl\units\i386-win32\win32 -FuE:\lazarus\lcl\units\i386-win32 -FuE:\lazarus\components\lazutils\lib\i386-win32 -FuE:\lazarus\packager\units\i386-win32 -FuE:\Tools\explotexgen\ -dLCL -dLCLwin32 -dBorland -dVer150 -dDelphi7 -dCompiler6_Up -dPUREPASCAL ExploTexGen.lpr"/>
+  <Complete Value="False"/>
+</CONFIG>

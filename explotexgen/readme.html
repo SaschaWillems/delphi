@@ -1,0 +1,109 @@
+<!doctype html public "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>ExplosionTextureGenerator - Readme</title>
+<meta name="author" content="Sascha Willems">
+</head>
+<body text="#000000" bgcolor="#FFFFFF" link="#FF0000" alink="#FF0000" vlink="#FF0000">
+
+<center>
+<br><br>
+<table border=1 rules=all width=75%>
+<tr>
+ <td>
+ <h1>Explosion Texture Generator - Readme</h1>
+ </td>
+</tr>
+</table>
+<br>
+<table border=1 rules=all width=75%>
+<tr>
+ <td>
+ <h3>Version 1.1 - Copyright © 2009-2013 by Sascha Willems</h3> </td>
+</tr>
+</table>
+<br>
+<table border=1 rules=all width=75%>
+<tr>
+ <td>
+ <b>About :</b><br> <font size=2>
+ Explosion Texture Generator is a tool that creates a 2D texture out of an explosion animation. Doing explosions with lots of particles is often no choice in a realtime 3D-application due to performance issues (heavy on bandwith and fillrate, etc.), so instead a 2D texture with an animation of the explosion is often used. This tool creates such a texture with an animation of the explosion stored in a grid of frames on a single texture. It let's you change all relevant parameters to create your own explosions.<br>
+ My main intention to create this tool was because the other tools I found were mostly too limited. The biggest drawback was the fact that the other tools won't output an alpha channel, but this tool will create an explosion texture and output it to PNG with a real alpha channel. Moreover you can change the number of animation frames on this texture as well as the texture size and the particle textures to use. In short : This explosion texture generator is much more flexible than the others.</font>
+ <br><br>
+ <b>Licence :</b><br>
+ <font size=2>
+ Explosion Texture Generator (short : ExploTexGen, to keep it in line with TerrTexGen) is <b>Freeware</b> and you are <b>not allowed to charge any money for it</b>. You're also only allowed to distribute it on the net or other media (CDs, etc.) after you have asked me for permission. If you're allowed to distribute this application, then you <b>must</b> distribute it in an not-altered way, so that it contains all files that originally came with it's package (including this file).
+ </font>
+ <br><br>
+ <b>License for generated images :</b><br>
+ <font size=2>
+ ExploTexGen generates textures for animated 2D explosions. You are allowed to use those textures as you want, may it be for commercial applications or something free. And if you do something interessting with it, it would be nice if you let me know or even better if you'd include me in your credits.
+ </font>
+ </td>
+</tr>
+</table>
+<br>
+<table border=1 rules=all width=75%>
+<tr>
+ <td>
+ <h3>Usage</h3>
+ </td>
+</tr>
+</table>
+<br>
+<table border=1 rules=all width=75%>
+<tr>
+ <td> <font size=2>
+<b>Important note about using your own particles :</b><br>
+You can select your own particle textures that are then used for creating the explosion animation. But you need to make sure that those textures are stored as either DDS or PNG, should include alpha, and (most important) are power-of-two, so a texture with a dimension of 64x64 (or 128x128, 256x256, etc) is ok, a texture sized 31x56 is not!
+ 
+<br><br><br>Using this tool should be pretty straightforward. On the left you see a list of parameters you can change :<br><br>
+<b>Global settings :</b>
+<ul><b>Texturesize</b><br>
+Sets the size for the result texture. The higher, the more details you get. But note that higher resolution textures may not be supported on older graphics cards, and that higher resolutions take longer to finish (especially 4k can take up a lot of time to get finished).<br>
+<b>Gridsize</b><br>
+Sets the number of subdivisions on your final texture. Higher division results in smoother animations but with less details due to less space per animation frame on the texture.<br>
+<b>Explosions scale</b><br>
+Sets the scale of a single explosion animation frame. Note that huge scales may make parts of the explosion fall out of bounds, so don't put in values too high.
+</ul> 
+<br><b>Settings for particles (base and sparks have the same options) :</b>
+<ul><b>Base count</b><br>
+Sets the minimum count of particles for this particle type. This means that there are at least as many particles as set with this value.<br>
+<b>Random count (added)</b><br>
+A random amount of particles set by this value will be added the the already existant particles set with the base count parameter.<br>
+<b>Initial spread (from center)</b><br>
+Decides how far the particles are spread from the center of the explosion.<br>
+<b>Rotation speed</b><br>
+Sets the speed at which the particles rotate around their own axis.<br>
+<b>Velocity</b><br>
+Decides how fast the particles move away from the center each frame. Note that putting high numbers for this may cause some particles to leave the borders of it's animation frame and may cause odd visuals.
+<b>Size</b><br>
+Scale of each particle.
+</ul>
+<br>
+<b>Where are my textures stored?</b><br>
+Final textures are stored in the "output"-subfolder of the application. </font>
+ </td>
+</tr>
+</table>
+<br>
+<table border=1 rules=all width=75%>
+<tr>
+ <td>
+ Made with <a href="http://www.embarcadero.com/de/products/delphi" target="_blank">Delphi</a>.
+ </td>
+</tr>
+</table>
+<br>
+<table border=1 rules=all width=75%>
+<tr>
+ <td>
+ Copyright © 2009-2013 by Sascha Willems - <a href="http://www.saschawillems.de" target="_blank">www.saschawillems.de</a>
+ </td>
+</tr>
+</table>
+<br><br>
+</center>
+
+</body>
+</html>

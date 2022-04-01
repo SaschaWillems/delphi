@@ -8,7 +8,7 @@ This repository is an archive for some of my projects written in Delphi. Since I
 
 And since I don't wont them to collect dust on some of my backup discs, I decided to upload them here.
 
-To find more information on (some) of the projects, take a look at http://www.saschawillems.de/?page_id=77
+To find more information on (some) of the projects, take a look at https://www.saschawillems.de/creations/
 
 ## License
 The license depends on the project, so before using the source, please refere to the license in the appropriate source file (or if specified) the readme of a project.
